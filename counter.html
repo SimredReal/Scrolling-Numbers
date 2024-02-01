@@ -1,0 +1,57 @@
+<style>
+    .rolling-number-animate {
+        transition: bottom var(--numberSrcollLength) linear, width var(--numberSrcollLength) linear;
+        position: relative;
+    }
+
+    .rolling-numbers-number {
+        transition: color calc(var(--numberSrcollLength) / 5) linear;
+        font-family: sans-serif;
+        font-size: 40px;
+    }
+
+    .column-container {
+        overflow: hidden;
+        width: fit-content;
+    }
+
+    .row-container {
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        flex-direction: row;
+    }
+
+    body {
+        height: 100%;
+    }
+</style>
+
+<body>
+    <div id="container" class="">
+
+    </div>
+    <input type="number" id="start">
+    <button id="button">e</button>
+</body>
+<script type="text/javascript" src="counter.js"></script>
+<script>
+    
+    //var column = new NumberColumn(document.getElementById("container"),5);
+    var row = new RollingNumbers(document.getElementById("container"), 1234.56);
+    document.getElementById("button").addEventListener("click", () => {
+        /*document.getElementById("number").className = "animate";
+        document.getElementById("number").style.bottom = "0px"
+        setTimeout(() => {
+            //document.getElementById("number").className = "up-9 animate";
+            document.getElementById("number").style.bottom = (this.numberHeight*12)+"px";
+        }, 1);*/
+        /*if (document.getElementById("select").value == "up") {
+            column.scrollUp(document.getElementById("start").value, document.getElementById("end").value, 1000)
+        } else {
+            column.scrollDown(document.getElementById("start").value, document.getElementById("end").value, 1000)
+        }*/
+        row.changeNumber(document.getElementById("start").value, 1000);
+
+    })
+</script>
