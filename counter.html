@@ -32,25 +32,13 @@
 
     </div>
     <input type="number" id="start">
-    <button id="button">e</button>
+    <button id="button">scroll to this</button>
 </body>
 <script type="text/javascript" src="counter.js"></script>
 <script>
     
-    //var column = new NumberColumn(document.getElementById("container"),5);
     var row = new RollingNumbers(document.getElementById("container"), 1234.56);
     document.getElementById("button").addEventListener("click", () => {
-        /*document.getElementById("number").className = "animate";
-        document.getElementById("number").style.bottom = "0px"
-        setTimeout(() => {
-            //document.getElementById("number").className = "up-9 animate";
-            document.getElementById("number").style.bottom = (this.numberHeight*12)+"px";
-        }, 1);*/
-        /*if (document.getElementById("select").value == "up") {
-            column.scrollUp(document.getElementById("start").value, document.getElementById("end").value, 1000)
-        } else {
-            column.scrollDown(document.getElementById("start").value, document.getElementById("end").value, 1000)
-        }*/
         row.changeNumber(document.getElementById("start").value, 1000);
 
     })
